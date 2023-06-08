@@ -1,0 +1,78 @@
+@media screen and (max-width: 700px) {
+    #pc {
+        display: none;
+    }
+
+    #mobile {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0; left: 0;
+        overflow: scroll;
+    }
+
+    header {
+        width: 100%;
+        background: blue;
+        color: white;
+    }
+
+    header span {
+        cursor: pointer;
+        padding: 3%;
+        line-height: 3;
+    }
+
+    nav {
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: blue;
+        color: white;
+        z-index: 20;
+        width: 0;
+        height: 100%;
+        line-height: 3;
+        overflow: auto;
+        transition: .5s;
+    }
+
+    nav a {
+        display: block;
+        padding: 2%;
+        cursor: pointer;
+        word-wrap: break-word;
+    }
+
+    header span:hover, nav a:hover {
+        background: white;
+        color: blue;
+    }
+
+    .closenav {
+        text-align: right;
+    }
+
+    header, nav, footer {
+        user-select: none;
+    }
+
+    section, main {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        background: red;
+    }
+
+    main {
+        background: lightgrey;
+    }
+
+    article {
+        width: 90%;
+        height: 90%;
+        overflow-x: hidden;
+        background: white;
+    }
+}
