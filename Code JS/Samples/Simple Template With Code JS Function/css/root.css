@@ -1,0 +1,23 @@
+/* Styles */
+/* You can add variables to :root */
+/* Import All Your Stylesheets*/
+
+@import url('grid.css');
+@import url('mobile.css');
+
+:root {
+    --f-index: 0;
+    --full: 100%;
+    --glue: fixed;
+    --dB: block;
+    --abs: absolute;
+}
+
+layout {
+    width: var(--full);
+    height: var(--full);
+    position: var(--glue);
+    top: var(--f-index);
+    left: var(--f-index);
+    overflow: auto;
+}
