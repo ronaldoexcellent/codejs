@@ -1,0 +1,220 @@
+/* Styles */
+/* You can add variables to :root */
+
+:root {
+    --null-number: 0;
+    --full: 100%;
+}
+
+#start {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url('./../files/images/bg.png') no-repeat;
+    background-size: cover;
+}
+
+form {
+    top: 40%; right: 0;
+    transform: translateX(-30%) translateY(-40%);
+    padding: 3%;
+    position: absolute;
+    overflow: hidden;
+    background: white;
+    box-shadow: 2px 3px 3px darkgrey;
+    border-radius: 25px;
+    box-sizing: border-box;
+    animation: 2s reposition linear;
+    line-height: 2.5;
+    border-top: 0.5px solid black;
+    border-left: 0.5px solid black;
+} @keyframes reposition {
+    0% {
+        top: 100%; right: 50%;
+        transform: translateX(50%) translateY(-50%);
+        height: 0;
+    } 50% {
+        top: 40%; right: 50%;
+        transform: translateX(50%) translateY(-50%);
+        height: 0;
+    } 90% {
+        height: 0;
+    } to {
+        top: 40%; right: 0;
+        transform: translateX(-30%) translateY(-50%);
+    }
+} #start center:nth-child(1) {
+    line-height: 1;
+} form center img {
+    width: 20%; height: 25%;
+} form h3 {
+    margin: 0 auto;
+} [type=text] {
+    border-radius: 20px;
+    background: linear-gradient(to right, black, grey);
+    border: 0;
+    padding: 3%; outline: 2px solid greenyellow;
+    transition: .5s;
+    width: 90%; color: white;
+    font-weight: bold;
+} [type=text]:focus {
+    border-radius: 0;
+    background: white;
+    border: 0;
+    border-bottom: 2px ridge blue;
+    outline: 0; color: black;
+} [type=text]::placeholder {
+    color: white;
+    font-family: cursive; padding: 3%;
+} [type=submit] {
+    background: black;
+    color: white;
+    border-radius: 20px;
+    padding: 3%;
+    cursor: pointer;
+} [type=submit]:hover {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}
+
+section:nth-child(1){
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: inline-flex;
+}
+
+#game-play {
+    height: 100%;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+} .players {
+    width: 50%;
+    height: 100%;
+    background: rgb(80, 0, 80);
+    color: white;
+    position: absolute;
+    overflow: auto;
+    line-height: 0;
+    text-transform: capitalize;
+    text-align: center;
+} .p2 {
+    left: 100%;
+    transform: translateX(-100%);
+} .active {
+    background: rgb(40, 0, 40);
+    display: list-item;
+} .avatar {
+    margin-top: 10px;
+    width: 100px; height: 100px;
+} #game-play h2 {
+    font-size: 4rem; font-family: georgia;
+} #dbat {
+    cursor: pointer;
+    height: 150px;
+    width: 100px;
+} #game-play h1 {
+    font-size: 7rem;
+} #game-play aside {
+    position: fixed;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    transition: .8s;
+    background: white;
+    padding: 2%;
+    z-index: 555;
+    font-weight: bold;
+    font-size: 2em;
+} aside button {
+    background: rgb(131, 52, 0);
+    color: white;
+    font-weight: bolder;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+#game-board {
+    height: 70%;
+    position: fixed;
+    display: none; /*grid*/
+    justify-items: center;
+    background-color: white;
+    border: black;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    line-height: 0;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    border-radius: 30px;
+    box-shadow: 0 3rem 5rem rgba(255, 255, 255, 0.4);
+    transition: .5s;
+    animation: p .5s;
+} @keyframes p {
+    0% {
+        transform: translate(0, 0);
+    } to {
+        transform: translate(-50%, -50%);
+    }
+} .dice-container {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+} #game-board h1 {
+    font-size: 5em;
+    color: black;
+    font-family: cursive;
+    animation: 1s rescale;
+    cursor: pointer;
+} .red, .blue {
+    width: 150px;
+    height: 150px;
+}
+
+@media screen and (max-width: 900px) {
+    #start {
+        background-size: 100% 40%;
+        background-color: darkblue;
+    } #start center:nth-child(1) {
+        line-height: 1;
+    } form {
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        animation: 2s slideUp linear;
+    } @keyframes slideUp {
+        0% {
+            transform: translateY(100%);
+        }
+    } [type=text] {
+        width: 90%;
+    } [type=submit] {
+        width: 90%;
+    }
+    .active {
+        width: 100%;
+    } .inactive {
+        display: none;
+    } .dice-container {
+        display: grid;
+        align-items: normal;
+    } .red, .blue {
+        width: 70px;
+        height: 70px;
+    }
+}
+
