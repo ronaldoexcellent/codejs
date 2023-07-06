@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<article>
+    <h1>Services</h1>
+    <div>
+        Code JS is a JavaScript Frontend Development Framework that focuses on HTML DOM and lets one manipulate it easier and faster. With Code JS, you can; <br>
+        <ul></ul>
+    </div>
+</article>
+<engine>
+    <script src="../js/components/codejsl.cjs"></script>
+    <script>
+        $info = [
+            'Build & manipulate web contents.',
+            'Bind application and Meta data.',
+            'Wrap new styles for objects in a single JS function.',
+            'Directly insert variables from an external JS file.',
+            'Import your stylesheets and scripts without directly insert them in your index file.',
+            'Create single page applications.',
+            'Manipulate contents faster with its functions.',
+            'Build your web apps & contents with JS easier, if you do not wish to write HTML directly in your markups & lots more...'
+        ];
+        widgets.constructMultiple('li', $info.length);
+        renderAll($('ul'), widget);
+        loop($info, ()=>{
+            html($$('li')[i], $info[i]);
+        });
+        css($('ul'), 'line-height: 2em;');
+        /*arrayOf($info.length, ()=>{
+            html($('ul'), '<li>' + $info[n] + '</li>');
+        });*/
+    </script>
+</engine>

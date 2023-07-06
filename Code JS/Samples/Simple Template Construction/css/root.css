@@ -1,0 +1,118 @@
+/* Styles */
+/* You can add variables to :root */
+/* Import All Your Stylesheets*/
+
+:root {
+    --f-index: 0;
+    --full: 100%;
+    --glue: fixed;
+    --dB: block;
+    --abs: absolute;
+}
+
+layout {
+    width: var(--full);
+    height: var(--full);
+    position: var(--glue);
+    top: var(--f-index);
+    left: var(--f-index);
+    overflow: auto;
+}
+
+header {
+    width: 100%;
+    background: blue;
+    color: white;
+    display: block;
+    line-height: 2;
+}
+
+header span {
+    cursor: pointer;
+    font-size: 25px;
+    padding: 1%;
+    width: 100%;
+}
+
+nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    display: block;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    overflow-x: hidden;
+    line-height: 3;
+    transition: .5s;
+    /*padding-top: 60px;*/
+}
+
+nav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+header span:hover, nav a:hover {
+    background: white;
+    color: blue;
+}
+
+.closenav {
+    text-align: right;
+}
+
+header, nav, footer {
+    user-select: none;
+}
+
+main {
+    background: grey;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+}
+
+section.pages {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: lightgrey;
+    display: none;
+    line-height: 2em;
+}
+
+section.pages:nth-child(1) {
+    display: block;
+}
+
+section.pages object {
+    width: 100%;
+    height: 100%;
+}
+
+section.pages object::-scrollbar {
+    display: block;
+}
+
+section.pages object::scrollbar-thumb {
+    width: 10px;
+    background: black;
+}
+
+footer {
+    width: 100%;
+    padding: 2%;
+    color: white;
+    background: black;
+    text-align: center;
+}
